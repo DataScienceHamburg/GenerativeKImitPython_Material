@@ -11,3 +11,5 @@ GEMINI.md
 *.json
 *.pickle
 uv.lock
+our_scripts/
+first_script.py

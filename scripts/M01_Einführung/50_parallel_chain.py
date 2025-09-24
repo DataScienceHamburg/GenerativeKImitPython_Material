@@ -3,8 +3,8 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableParallel
 from langchain_core.output_parsers import StrOutputParser
-from dotenv import load_dotenv
-load_dotenv('.env')
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 #%% Model Instance
 model = ChatOpenAI(model="gpt-4o-mini", temperature=0)
