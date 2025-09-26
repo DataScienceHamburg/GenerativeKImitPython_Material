@@ -26,7 +26,7 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "pytube>=15.0.0",
     "sentence-transformers>=3.3.0",
-    "unstructured>=0.16.8",
+    "unstructured[pdf]>=0.16.8",
     "wikipedia>=1.4.0",
     "youtube-transcript-api>=0.6.3",
     "langchain-ollama>=0.2.1",
@@ -42,6 +42,12 @@ dependencies = [
     "sentencepiece>=0.2.0",
     "huggingface-hub>=0.26.2",
     "langchain-faiss>=0.1.1",
+    "langchain-pymupdf4llm>=0.4.1",
+    "fitz>=0.0.1.dev2",
+    "frontend>=0.0.3",
+    "nltk>=3.9.1",
+    "streamlit>=1.50.0",
+    "pytesseract>=0.3.13",
 ]
 
 [tool.uv.sources]

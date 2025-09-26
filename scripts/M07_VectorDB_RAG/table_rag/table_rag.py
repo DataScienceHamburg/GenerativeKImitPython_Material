@@ -1,3 +1,4 @@
+
 #%%
 import sqlite3
 from langchain_groq import ChatGroq
@@ -40,6 +41,8 @@ def create_sql_query(user_query: str, sql_table_info: str):
     )
     chain = prompt | model | JsonOutputParser(pydantic_object=SQLQuery)
     return chain.invoke({"sql_table_info": sql_table_info, "user_query": user_query})
+
+#%%
 
 
 # %%
