@@ -46,6 +46,8 @@ def ocr_pdf_with_tesseract(
 loader = PyPDFLoader(str(pdf_path))
 docs = loader.load()
 
+#%%
+
 # Fallback to OCR if extracted text seems empty (e.g., scanned/image PDF)
 total_chars = sum(len((d.page_content or "").strip()) for d in docs)
 if total_chars < 20:

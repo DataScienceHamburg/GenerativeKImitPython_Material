@@ -13,3 +13,4 @@ GEMINI.md
 uv.lock
 our_scripts/
 first_script.py
+*.pyc
