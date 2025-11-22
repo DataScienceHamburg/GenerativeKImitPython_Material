@@ -7,9 +7,16 @@ langchain-huggingface
 langchain-openai
 langchain
 langgraph
-matplotlib
+matplotlib>=3.5.0
 python-dotenv
 pytube
 unstructured
 wikipedia
 youtube-transcript-api
+streamlit>=1.28.0
+torch>=2.0.0
+pandas>=1.5.0
+numpy>=1.21.0
+scikit-learn>=1.1.0
+kagglehub>=0.2.0
+seaborn>=0.11.0

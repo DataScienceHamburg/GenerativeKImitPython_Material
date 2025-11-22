@@ -14,3 +14,8 @@ uv.lock
 our_scripts/
 first_script.py
 *.pyc
+app_deep_learning/
+crewai_first_test/
+fkie_scripts/
+my-first-mcp-server/
+scripts_bu/

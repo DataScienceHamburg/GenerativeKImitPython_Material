@@ -42,12 +42,9 @@ def create_sql_query(user_query: str, sql_table_info: str):
     chain = prompt | model | JsonOutputParser(pydantic_object=SQLQuery)
     return chain.invoke({"sql_table_info": sql_table_info, "user_query": user_query})
 
-#%%
-
-
 # %%
 sql_table_info = """
-CREATE TABLE coffee_sales (
+coffee_sales (
     sale_id INT PRIMARY KEY,
     product_name VARCHAR(100),
     origin_country VARCHAR(50),
@@ -64,16 +61,19 @@ CREATE TABLE coffee_sales (
 """
 user_query = "What is the total sales over all time?"
 sql_query = create_sql_query(user_query, sql_table_info)
+print(sql_query)
 fetch_information_from_db(query=sql_query['sql_query'])
 # %% query that was created
 sql_query['sql_query']
 
 #%%
 def rag(user_query: str, sql_table_info: str):
+    # 1. Retrieval
     sql_query = create_sql_query(user_query, sql_table_info)
     print(sql_query['sql_query'])
     retrieved_information = fetch_information_from_db(query=sql_query['sql_query'])
     print(f"Retrieved Info: {retrieved_information}")
+    # 2. Augmentation
     llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
     # prepare chain
     messages = [
@@ -86,7 +86,7 @@ def rag(user_query: str, sql_table_info: str):
     ]
     prompt_template = ChatPromptTemplate.from_messages(messages)
     chain = prompt_template | llm | StrOutputParser()
-    # invoke chain
+    # 3. Generation
     model_response = chain.invoke({"retrieved_information": retrieved_information, "user_query": user_query, "sql_query": sql_query['sql_query']})
     return model_response
 
@@ -96,4 +96,4 @@ user_query = "What's the average price of organic coffee compared to non-organic
 res = rag(user_query, sql_table_info)
 res
 
-# %%
+# %% 

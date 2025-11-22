@@ -9,7 +9,7 @@ current_dir = os.path.dirname(file_path)
 
 # Go up one directory level
 parent_dir = os.path.dirname(current_dir)
-text_files_path = os.path.join(parent_dir, "data")
+text_files_path = os.path.join(parent_dir, "10_data_loading", "sample_docs")
 
 #%% (3) load all files in a directory
 dir_loader = DirectoryLoader(path=text_files_path, 
@@ -19,3 +19,5 @@ docs = dir_loader.load()
 # %%
 docs
 
+
+# %%

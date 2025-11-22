@@ -1,3 +1,4 @@
+
 #%% packages
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
@@ -37,5 +38,5 @@ topic = "What is the meaning of life?"
 result = map_chain.invoke({"topic": topic})
 # %% Print
 from pprint import pprint
-pprint(result)
+pprint(result, width=40)
 # %%

@@ -29,7 +29,6 @@ dependencies = [
     "unstructured[pdf]>=0.16.8",
     "wikipedia>=1.4.0",
     "youtube-transcript-api>=0.6.3",
-    "langchain-ollama>=0.2.1",
     "seaborn>=0.13.2",
     "ag2>=0.3.2",
     "langchain-anthropic>=0.3.10",
@@ -48,6 +47,10 @@ dependencies = [
     "nltk>=3.9.1",
     "streamlit>=1.50.0",
     "pytesseract>=0.3.13",
+    "langchain-ollama>=0.3.0",
+    "diffusers>=0.35.1",
+    "kagglehub>=0.3.13",
+    "python-docx>=1.2.0",
 ]
 
 [tool.uv.sources]
